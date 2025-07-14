@@ -1,4 +1,6 @@
-<pre lang="markdown"> ## Project Structure Nexus/
+<pre lang="markdown"> ## Project Structure 
+
+Nexus/
 ├── server/
 │ ├── src/
 │ │ ├── server.ts
