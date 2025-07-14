@@ -1,0 +1,24 @@
+# Specifies the version of the Docker Compose file format
+version: '3.8'
+
+# Defines the services (containers) that make up our app
+services:
+  # This is our PostgreSQL database service
+  postgres:
+    image: postgres:17.5-bookworm #
+    restart: always # Always restart the container if it stops.
+    environment:
+      # These variables are used by the Postgres image to initialize the database
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    ports:
+      # Maps port 5432 on our computer to port 5432 inside the container
+      - "5432:5432"
+    volumes:
+      # This makes sure our data persists even if we remove the container
+      - postgres_data:/var/lib/postgresql/data
+
+# Defines the volume we referenced above
+volumes:
+  postgres_data:
