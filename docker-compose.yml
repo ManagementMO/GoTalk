@@ -1,3 +1,6 @@
+# Use this command bro after i give u the env file
+# docker-compose --env-file docker-compose.env up
+
 # Specifies the version of the Docker Compose file format
 version: '3.8'
 
